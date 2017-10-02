@@ -1,6 +1,11 @@
 # Neural editor
 
-Source code accompanying the paper "Generating Sentences by Editing Prototypes".
+Source code accompanying our paper [Generating Sentences by Editing Prototypes](https://arxiv.org/abs/1709.08878).
 
-We will be uploading our code and datasets soon!
+**Authors:** Kelvin Guu\*, Tatsunori B. Hashimoto\*, Yonatan Oren, Percy Liang
+(\* equal contribution)
+
+The raw code is now available. We will be cleaning things up, adding more
+documentation and releasing datasets soon as well.
+
 If you have questions, please email Kelvin at `guu.kelvin` at `gmail.com`.
