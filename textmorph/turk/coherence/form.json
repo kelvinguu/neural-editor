@@ -1,0 +1,602 @@
+{
+  "form": [
+    {
+      "Overview": {
+        "fields": [
+          {
+            "field": {
+              "Title": "Decide on the coherence and grammaticality of these ${num} sentences."
+            }
+          },
+          {
+            "field": {
+              "Text": "Expected time to complete: 2 minutes."
+            }
+          },
+          {
+            "field": {
+              "Text": "Please rate these sentences by their coherence and grammaticality in accordance with the following instructions:"
+            }
+          },
+          {
+            "append": {
+              "FormattedContent": {
+                "content": "<table border=\"1\"> <tbody> <tr> <td><b>Score</b></td> <td><b>Coherence</b> <br></br> We say that a sentence is \"coherent\" if you would expect the sentence to appear in a review of a business.</td> <td><b>Grammaticality</b> <br></br> We say that a sentence is \"grammatical\" if it has correct grammar.</td> </tr> <tr> <td> <b>3/3</b> </td> <td> The sentence looks exactly like something you would expect to see in a business review. <br></br> Example: This is our favorite pizza place in the city. Definitely will be coming back! </td> <td> The sentence has correct grammar. </td> </tr> <tr> <td> <b>2/3</b> </td> <td> The sentence looks somewhat like something you would expect to see in a business review. <br></br> </td> <td> The sentence has some grammar mistakes, but is fine on the whole. </td> </tr> <tr> <td> <b>1/3</b> </td> <td> The sentence looks nothing like something you would expect to see in a business review. <br></br> Example: I am going to visit my grandmother tomorrow. </td> <td> The sentence has many grammar mistakes. <br></br> Example: We went went to the place instead great yes </td> </tr> </tbody> </table>"
+              }
+            }
+          },
+          {
+            "append": {
+              "FormattedContent": {
+                "content": "If you see a word in &lt;tags&gt;, use the list below to determine its meaning: <ul> <li>&lt;person&gt; is a person </li> <li>&lt;gpe&gt; is a location </li> <li>&lt;date&gt; is a date or point in time </li> <li>&lt;norp&gt; is a nationality </li> <li>&lt;cardinal&gt; is a number </li> <li>&lt;org&gt; is an organization </li> <li>&lt;ordinal&gt; is \"first\", \"second\", \"third\", etc... </li> <li>&lt;money&gt; is a dollar value amount.</li> <li>&lt;unk&gt; is a general unspecified thing.</li> </ul> <b> Assume that the above tags represent words that will not otherwise impact the grammar of a sentence. </b>"
+              }
+            }
+          },
+          {
+            "append": {
+              "FormattedContent": {
+                "content": "Please submit feedback or concerns using this form: <a href=\"https://goo.gl/forms/giqqeKsJiMwaZE7X2\">Google Form</a>."
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence 1"
+                }
+              },
+              {
+                "append": {
+                  "FormattedContent": {
+                    "content": "<b>${sent_0}</b>"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "Text": "Would you expect to see the above sentence in an online review about a business?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "selections": [
+                  [
+                    "3/3: yes",
+                    "3"
+                  ],
+                  [
+                    "2/3: maybe",
+                    "2"
+                  ],
+                  [
+                    "1/3: no",
+                    "1"
+                  ]
+                ],
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_0_id}_c"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Text": "How would you rate the grammar of the above sentence?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "selections": [
+                  [
+                    "3/3: great",
+                    "3"
+                  ],
+                  [
+                    "2/3: okay",
+                    "2"
+                  ],
+                  [
+                    "1/3: poor",
+                    "1"
+                  ]
+                ],
+                "max": 1,
+                "min": 1,
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_0_id}_g"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence 2"
+                }
+              },
+              {
+                "append": {
+                  "FormattedContent": {
+                    "content": "<b>${sent_1}</b>"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "Text": "Would you expect to see the above sentence in an online review about a business?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "selections": [
+                  [
+                    "3/3: yes",
+                    "3"
+                  ],
+                  [
+                    "2/3: maybe",
+                    "2"
+                  ],
+                  [
+                    "1/3: no",
+                    "1"
+                  ]
+                ],
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_1_id}_c"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Text": "How would you rate the grammar of the above sentence?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "selections": [
+                  [
+                    "3/3: great",
+                    "3"
+                  ],
+                  [
+                    "2/3: okay",
+                    "2"
+                  ],
+                  [
+                    "1/3: poor",
+                    "1"
+                  ]
+                ],
+                "max": 1,
+                "min": 1,
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_1_id}_g"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence 3"
+                }
+              },
+              {
+                "append": {
+                  "FormattedContent": {
+                    "content": "<b>${sent_2}</b>"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "Text": "Would you expect to see the above sentence in an online review about a business?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "selections": [
+                  [
+                    "3/3: yes",
+                    "3"
+                  ],
+                  [
+                    "2/3: maybe",
+                    "2"
+                  ],
+                  [
+                    "1/3: no",
+                    "1"
+                  ]
+                ],
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_2_id}_c"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Text": "How would you rate the grammar of the above sentence?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "selections": [
+                  [
+                    "3/3: great",
+                    "3"
+                  ],
+                  [
+                    "2/3: okay",
+                    "2"
+                  ],
+                  [
+                    "1/3: poor",
+                    "1"
+                  ]
+                ],
+                "max": 1,
+                "min": 1,
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_2_id}_g"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence 4"
+                }
+              },
+              {
+                "append": {
+                  "FormattedContent": {
+                    "content": "<b>${sent_3}</b>"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "Text": "Would you expect to see the above sentence in an online review about a business?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "selections": [
+                  [
+                    "3/3: yes",
+                    "3"
+                  ],
+                  [
+                    "2/3: maybe",
+                    "2"
+                  ],
+                  [
+                    "1/3: no",
+                    "1"
+                  ]
+                ],
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_3_id}_c"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Text": "How would you rate the grammar of the above sentence?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "selections": [
+                  [
+                    "3/3: great",
+                    "3"
+                  ],
+                  [
+                    "2/3: okay",
+                    "2"
+                  ],
+                  [
+                    "1/3: poor",
+                    "1"
+                  ]
+                ],
+                "max": 1,
+                "min": 1,
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_3_id}_g"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence 5"
+                }
+              },
+              {
+                "append": {
+                  "FormattedContent": {
+                    "content": "<b>${sent_4}</b>"
+                  }
+                }
+              },
+              {
+                "field": {
+                  "Text": "Would you expect to see the above sentence in an online review about a business?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "selections": [
+                  [
+                    "3/3: yes",
+                    "3"
+                  ],
+                  [
+                    "2/3: maybe",
+                    "2"
+                  ],
+                  [
+                    "1/3: no",
+                    "1"
+                  ]
+                ],
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_4_id}_c"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Text": "How would you rate the grammar of the above sentence?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "selections": [
+                  [
+                    "3/3: great",
+                    "3"
+                  ],
+                  [
+                    "2/3: okay",
+                    "2"
+                  ],
+                  [
+                    "1/3: poor",
+                    "1"
+                  ]
+                ],
+                "max": 1,
+                "min": 1,
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "${sent_4_id}_g"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "How similar in meaning would you say (on average) are the above ${num} sentences to each other?"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "selections": [
+                  [
+                    "5/5: completely equivalent",
+                    "5"
+                  ],
+                  [
+                    "4/5: mostly equivalent",
+                    "4"
+                  ],
+                  [
+                    "3/5: roughly equivalent",
+                    "3"
+                  ],
+                  [
+                    "2/5: not equivalent, sharing details",
+                    "2"
+                  ],
+                  [
+                    "1/5: not equivalent, same topic",
+                    "1"
+                  ],
+                  [
+                    "0/5: completely dissimilar",
+                    "0"
+                  ]
+                ],
+                "max": 1,
+                "min": 1,
+                "other": false,
+                "type": "text"
+              }
+            }
+          }
+        },
+        "identifier": "sim_${fname}"
+      }
+    }
+  ]
+}

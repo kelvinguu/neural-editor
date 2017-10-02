@@ -1,0 +1,6 @@
+optim {
+    seed = 0  # random seed
+    learning_rate = 0.001
+    batch_size = 32  # examples per batch
+    max_iters = 1500  # max number of mini-batch steps to take
+}

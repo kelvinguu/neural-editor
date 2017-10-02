@@ -1,0 +1,376 @@
+{
+  "form": [
+    {
+      "Overview": {
+        "fields": [
+          {
+            "field": {
+              "Title": "Decide on the similarity between these ${num} sentence pairs."
+            }
+          },
+          {
+            "field": {
+              "Text": "Expected time to complete: 2 minutes."
+            }
+          },
+          {
+            "field": {
+              "Text": "Please rate these sentences by their similarity in accordance with the following instructions:"
+            }
+          },
+          {
+            "append": {
+              "FormattedContent": {
+                "content": "<table border=\"1\"> <tbody> <tr> <td><b>Rating</b></td> <td><b>Example Sentence Pair</b></td> </tr> <tr> <td> <b>5/5</b> <br></br> The sentences are equivalent, and have the exact same meaning. </td> <td> The service and food are fantastic and the staff is great!<br></br> The staff is really good, and the service and food are amazing. </td> </tr> <tr> <td> <b>4/5</b> <br></br> The sentences are mostly equivalent, but some unimportant details differ. </td> <td> I ate there last week and the ice-cream sandwhiches were great..!<br></br> Last time I ate there I found the ice-cream to be fantastic. </td> </tr> <tr> <td> <b>3/5</b> <br></br> The two sentences are roughly equivalent but differ on some important details. </td> <td> I really enjoyed the food, even though they were quite slow. <br></br> I was seated quickly, and the food was great! </td> </tr> <tr> <td> <b>2/5</b> <br></br> The two sentences are not equivalent, but share some details </td> <td> I loved the cake at the restaurant. <br></br> The cake is a lie. <br></br> </td> </tr> <tr> <td> <b>1/5</b> <br></br> The two sentences are not equivalent but are on the same topic. </td> <td> The student bought a new laptop for the school year. <br></br> The woman is taking a course on computer programming. </td> </tr> <tr> <td> <b>0/5</b> <br></br> The two sentences are completely dissimilar. </td> <td> I am planning a trip to the city soon. <br></br> Did you see that game-play yesterday? Amazing. </td> </tr> </tbody> </table>"
+              }
+            }
+          },
+          {
+            "append": {
+              "FormattedContent": {
+                "content": "If you see a word in &lt;tags&gt;, use the list below to determine its meaning: <ul> <li>&lt;person&gt; is a person </li> <li>&lt;gpe&gt; is a location </li> <li>&lt;date&gt; is a date or point in time </li> <li>&lt;norp&gt; is a nationality </li> <li>&lt;cardinal&gt; is a number </li> <li>&lt;org&gt; is an organization </li> <li>&lt;ordinal&gt; is \"first\", \"second\", \"third\", etc... </li> <li>&lt;money&gt; is a dollar value amount.</li> <li>&lt;unk&gt; is a general unspecified thing.</li> </ul>"
+              }
+            }
+          },
+          {
+            "append": {
+              "FormattedContent": {
+                "content": "Please submit feedback or concerns using this form: <a href=\"https://goo.gl/forms/giqqeKsJiMwaZE7X2\">Google Form</a>."
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence Pair 1"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_0_a}"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_0_b}"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "other": false,
+                "type": "text",
+                "selections": [
+                  [
+                    "5/5: completely equivalent",
+                    "5"
+                  ],
+                  [
+                    "4/5: mostly equivalent",
+                    "4"
+                  ],
+                  [
+                    "3/5: roughly equivalent",
+                    "3"
+                  ],
+                  [
+                    "2/5: not equivalent, sharing details",
+                    "2"
+                  ],
+                  [
+                    "1/5: not equivalent, same topic",
+                    "1"
+                  ],
+                  [
+                    "0/5: completely dissimilar",
+                    "0"
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "identifier": "${pair_0_id}"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence Pair 2"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_1_a}"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_1_b}"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "other": false,
+                "type": "text",
+                "selections": [
+                  [
+                    "5/5: completely equivalent",
+                    "5"
+                  ],
+                  [
+                    "4/5: mostly equivalent",
+                    "4"
+                  ],
+                  [
+                    "3/5: roughly equivalent",
+                    "3"
+                  ],
+                  [
+                    "2/5: not equivalent, sharing details",
+                    "2"
+                  ],
+                  [
+                    "1/5: not equivalent, same topic",
+                    "1"
+                  ],
+                  [
+                    "0/5: completely dissimilar",
+                    "0"
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "identifier": "${pair_1_id}"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence Pair 3"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_2_a}"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_2_b}"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "other": false,
+                "type": "text",
+                "selections": [
+                  [
+                    "5/5: completely equivalent",
+                    "5"
+                  ],
+                  [
+                    "4/5: mostly equivalent",
+                    "4"
+                  ],
+                  [
+                    "3/5: roughly equivalent",
+                    "3"
+                  ],
+                  [
+                    "2/5: not equivalent, sharing details",
+                    "2"
+                  ],
+                  [
+                    "1/5: not equivalent, same topic",
+                    "1"
+                  ],
+                  [
+                    "0/5: completely dissimilar",
+                    "0"
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "identifier": "${pair_2_id}"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence Pair 4"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_3_a}"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_3_b}"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "other": false,
+                "type": "text",
+                "selections": [
+                  [
+                    "5/5: completely equivalent",
+                    "5"
+                  ],
+                  [
+                    "4/5: mostly equivalent",
+                    "4"
+                  ],
+                  [
+                    "3/5: roughly equivalent",
+                    "3"
+                  ],
+                  [
+                    "2/5: not equivalent, sharing details",
+                    "2"
+                  ],
+                  [
+                    "1/5: not equivalent, same topic",
+                    "1"
+                  ],
+                  [
+                    "0/5: completely dissimilar",
+                    "0"
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "identifier": "${pair_3_id}"
+      }
+    },
+    {
+      "Question": {
+        "content": {
+          "QuestionContent": {
+            "fields": [
+              {
+                "field": {
+                  "Title": "Sentence Pair 5"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_4_a}"
+                }
+              },
+              {
+                "field": {
+                  "Text": "${sent_4_b}"
+                }
+              }
+            ]
+          }
+        },
+        "is_required": true,
+        "answer_spec": {
+          "AnswerSpecification": {
+            "spec": {
+              "SelectionAnswer": {
+                "style": "radiobutton",
+                "min": 1,
+                "max": 1,
+                "other": false,
+                "type": "text",
+                "selections": [
+                  [
+                    "5/5: completely equivalent",
+                    "5"
+                  ],
+                  [
+                    "4/5: mostly equivalent",
+                    "4"
+                  ],
+                  [
+                    "3/5: roughly equivalent",
+                    "3"
+                  ],
+                  [
+                    "2/5: not equivalent, sharing details",
+                    "2"
+                  ],
+                  [
+                    "1/5: not equivalent, same topic",
+                    "1"
+                  ],
+                  [
+                    "0/5: completely dissimilar",
+                    "0"
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "identifier": "${pair_4_id}"
+      }
+    }
+  ]
+}

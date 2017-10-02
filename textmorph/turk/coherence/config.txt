@@ -1,0 +1,7 @@
+title = "Coherence Task"
+description = "Determine the coherence and grammaticality of sentences"
+keywords = "sentence, coherence, grammar"
+price = 0.40 # default
+duration = 60 * 60  # 60 minutes per HIT
+approval_delay = 3600 * 24 * 7  # 7 days for auto-approval
+form_json = "form.json"

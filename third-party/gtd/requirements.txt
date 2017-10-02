@@ -1,0 +1,14 @@
+line_profiler==1.0
+matplotlib==1.4.3
+numpy==1.11.0
+psycopg2==2.6.1
+pytest==2.9.2
+spacy==0.99
+SQLAlchemy==1.1.0b3
+tensorflow==0.8.0
+ipython==5.1.0
+scipy==0.18.0
+faulthandler==2.4
+futures==3.0.5
+jsonpickle==0.9.2
+fabric==1.12.0

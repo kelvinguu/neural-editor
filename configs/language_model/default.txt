@@ -1,0 +1,20 @@
+include "../optim/default.txt"
+include "../eval/default.txt"
+
+model {
+    vocab_size = 10000
+    word_dim = 300
+    agenda_dim = 100
+    hidden_dim = 100
+    num_layers = 3
+    kl_weight_steps = 50000
+    kl_weight_rate = 8
+    kl_weight_cap = 1.0
+    dci_keep_rate = 0.8
+    wvec_path = glove.6B.300d_yelp.txt
+    type = 0 # 0 = language model, 1 = SVAE
+}
+
+dataset {
+    path = yelp_dataset_static
+}
