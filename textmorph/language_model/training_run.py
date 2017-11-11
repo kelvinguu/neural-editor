@@ -15,7 +15,7 @@ from gtd.ml.torch.utils import similar_size_batches
 from gtd.ml.torch.utils import try_gpu
 from gtd.ml.training_run import TrainingRuns
 from gtd.ml.vocab import SimpleEmbeddings
-from gtd.utils import sample_if_large, chunks, ClassCounter
+from gtd.utils import sample_if_large, chunks
 from textmorph import data
 from textmorph.language_model.language_model import LanguageModel, \
     NoisyLanguageModel
@@ -25,7 +25,6 @@ class LMTrainingRun(TorchTrainingRun):
 
     def __init__(self, config, save_dir):
         super(LMTrainingRun, self).__init__(config, save_dir)
-        self.variable_counter = ClassCounter(Variable)
 
         # reload model
         model, optimizer = self._build_model(config)
@@ -45,10 +44,6 @@ class LMTrainingRun(TorchTrainingRun):
 
     def evaluate(self):
         self._evaluate(self.config, self._train_state)
-
-        # log number of variables in existence
-        var_count = self.variable_counter.count()
-        self.tb_logger.log_value('variable_count', var_count, self._train_state.train_steps)
 
     def _build_model(cls, config):
         file_path = join(data.workspace.word_vectors, config.model.wvec_path)

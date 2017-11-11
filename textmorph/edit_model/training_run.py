@@ -18,7 +18,7 @@ from fabric.api import local
 import gtd.io
 from gtd.chrono import verboserate
 from gtd.log import Metadata
-from gtd.utils import random_seed, sample_if_large, bleu, Failure, Config, chunks, ClassCounter
+from gtd.utils import random_seed, sample_if_large, bleu, Failure, Config, chunks
 from gtd.ml.training_run import TrainingRunWorkspace, TrainingRuns
 from gtd.ml.torch.training_run import TorchTrainingRun
 from textmorph import data
@@ -244,10 +244,6 @@ class EditTrainingRun(TorchTrainingRun):
     def __init__(self, config, save_dir):
         super(EditTrainingRun, self).__init__(config, save_dir)
 
-        # track number of Variables in existence
-        # need to initialize before variables get created
-        self.variable_counter = ClassCounter(Variable)
-
         # extra dir for storing TrainStates where NaN was encountered
         self.workspace.add_dir('nan_checkpoints', 'nan_checkpoints')
 
@@ -266,8 +262,7 @@ class EditTrainingRun(TorchTrainingRun):
         self._examples = EditDataSplits(data_dir, config.dataset.use_diff)
 
     def train(self):
-        self._train(self.config, self._train_state, self._examples, self.workspace, self.metadata, self.tb_logger,
-                    self.variable_counter)
+        self._train(self.config, self._train_state, self._examples, self.workspace, self.metadata, self.tb_logger)
 
     def reload(self, train_steps):
         """Reload the checkpoint that was saved after taking `train_steps` steps."""
@@ -378,7 +373,7 @@ class EditTrainingRun(TorchTrainingRun):
         return True
 
     @classmethod
-    def _train(cls, config, train_state, examples, workspace, metadata, tb_logger, var_counter):
+    def _train(cls, config, train_state, examples, workspace, metadata, tb_logger):
         """Train a model.
 
         NOTE: modifies TrainState in place.
@@ -393,7 +388,6 @@ class EditTrainingRun(TorchTrainingRun):
             workspace (Workspace)
             metadata (Metadata)
             tb_logger (tensorboard_logger.Logger)
-            var_counter (ClassCounter)
         """
         with random_state(train_state.random_state):
             editor = train_state.editor
@@ -462,7 +456,6 @@ class EditTrainingRun(TorchTrainingRun):
                     if train_state.train_steps % config.eval.eval_steps == 0:
                         cls._evaluate(config, editor, examples, metadata, tb_logger, train_state.train_steps, noiser, big_eval=False)
                         tb_logger.log_value('grad_norm', grad_norm, train_state.train_steps)
-                        tb_logger.log_value('variable_count', var_counter.count(), train_state.train_steps)
 
                     if train_state.train_steps % config.eval.big_eval_steps == 0:
                         cls._evaluate(config, editor, examples, metadata, tb_logger, train_state.train_steps, noiser, big_eval=True)
