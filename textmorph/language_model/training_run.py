@@ -1,30 +1,24 @@
-import random
 import codecs
-from os import listdir, makedirs
+import random
+from os import makedirs
 from os.path import dirname, realpath, join, exists
 
-from contextlib import contextmanager
-
 import numpy as np
-import torch
 from torch import optim
-from fabric.api import local
 from torch.autograd import Variable
 
-from gtd.io import num_lines
-from gtd.utils import random_seed, sample_if_large, bleu, Failure, Config, chunks, ClassCounter
 from gtd.chrono import verboserate
+from gtd.io import num_lines
 from gtd.ml.torch.token_embedder import TokenEmbedder
 from gtd.ml.torch.training_run import TorchTrainingRun
 from gtd.ml.torch.utils import similar_size_batches
-from gtd.ml.training_run import TrainingRuns
-from gtd.ml.vocab import SimpleEmbeddings, WordVocab
-from gtd.ml.torch.seq_batch import SequenceBatch
 from gtd.ml.torch.utils import try_gpu
+from gtd.ml.training_run import TrainingRuns
+from gtd.ml.vocab import SimpleEmbeddings
+from gtd.utils import sample_if_large, chunks, ClassCounter
 from textmorph import data
-from textmorph.language_model.language_model import LanguageModel, NoisyLanguageModel
-
-from gtd.ml.torch.checkpoints import Checkpoints, TrainState
+from textmorph.language_model.language_model import LanguageModel, \
+    NoisyLanguageModel
 
 
 class LMTrainingRun(TorchTrainingRun):
@@ -51,7 +45,7 @@ class LMTrainingRun(TorchTrainingRun):
 
     def evaluate(self):
         self._evaluate(self.config, self._train_state)
-        
+
         # log number of variables in existence
         var_count = self.variable_counter.count()
         self.tb_logger.log_value('variable_count', var_count, self._train_state.train_steps)
