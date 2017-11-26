@@ -6,6 +6,9 @@ Source code accompanying our paper [Generating Sentences by Editing Prototypes](
 (\* equal contribution)
 
 NOTES:
+- The instructions below are still a work in progress.
+    - If you encounter any problems, please open a GitHub issue, or submit a
+    pull request if you know the fix!
 - This code requires data directories that we have not uploaded yet.
 - This is research code meant to serve as a reference implementation. We
 do not recommend heavily extending or modifying this codebase for other
