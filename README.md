@@ -16,6 +16,13 @@ purposes.
 
 If you have questions, please email Kelvin at `guu.kelvin` at `gmail.com`.
 
+## Datasets
+
+- Yelp: [download from Codalab](https://worksheets.codalab.org/bundles/0x99d0557925b34dae851372841f206b8a/)
+- One Billion Word Benchmark: [download from Codalab](https://worksheets.codalab.org/bundles/0x017b7af92956458abc7f4169830a6537/)
+
+Each line of each TSV file is a (prototype, revision) edit pair, separated by a tab.
+
 ## Setup
 
 1. Install [Docker](https://www.docker.com/). If you want to use GPUs, also
@@ -50,6 +57,8 @@ install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker).
     ```
 
 ## Quick Start
+
+Before you begin, be sure to set the `TEXTMORPH_DATA` environment variable (see "Setup" above).
 
 Start a Docker container:
 ```bash
