@@ -1,5 +1,3 @@
-#!/u/nlp/packages/anaconda2/bin/python
-
 # THIS SCRIPT SHOULD BE SYMLINKED INTO THE ROOT OF YOUR GIT REPO
 # It assumes that config.json can also be found at the root of your repo.
 
@@ -68,11 +66,11 @@ run_cmd = '{docker} run {options} {image} {command}'.format(docker=docker,
                                                             options=' '.join(docker_args),
                                                             image=image,
                                                             command=args.command)
-print 'Data directory: {}'.format(data_dir)
-print 'Command to run inside Docker: {}'.format(args.command)
+print('Data directory: {}'.format(data_dir))
+print('Command to run inside Docker: {}'.format(args.command))
 
-print pull_cmd
-print run_cmd
+print(pull_cmd)
+print(run_cmd)
 if not args.debug:
     subprocess.call(pull_cmd, shell=True)
     subprocess.call(run_cmd, shell=True)
