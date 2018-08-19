@@ -19,6 +19,7 @@ If you have questions, please email Kelvin at `guu.kelvin` at `gmail.com`.
 ## Related resources
 
 - [Reproducible experiments on CodaLab](https://worksheets.codalab.org/worksheets/0xa915ba2f8b664ddf8537c83bde80cc8c/)
+- [A detailed description of the training algorithm](http://kelvinguu.com/public/projects/neural_editor_training.pdf)
 
 ## Datasets
 
