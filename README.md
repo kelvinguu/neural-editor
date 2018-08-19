@@ -5,6 +5,7 @@ Source code accompanying our paper, "Generating Sentences by Editing Prototypes"
 **Authors:** Kelvin Guu\*, Tatsunori B. Hashimoto\*, Yonatan Oren, Percy Liang
 (\* equal contribution)
 
+- A detailed description of the training algorithm is now [available here](http://kelvinguu.com/public/projects/neural_editor_training.pdf).
 - We are drafting a more detailed README in the
   [README](https://github.com/kelvinguu/neural-editor/tree/readme) branch (see here for dataset links)
 - This is research code meant to serve as a reference implementation. We do not
